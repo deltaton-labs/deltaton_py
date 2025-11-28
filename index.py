@@ -59,24 +59,9 @@ class DeltatonFeedClient:
 
   async def wait(self):
     await self.socket.wait()
-  
-  async def emit_bee(self, data: Dict[str, Any], callback: Optional[Callable] = None):
-    await self.emit_data('bee', data, callback)
-
-  async def emit_fruitgrowing(self, data: Dict[str, Any], callback: Optional[Callable] = None):
-    await self.emit_data('fruitgrowing', data, callback)
 
   async def emit_general(self, data: Dict[str, Any], callback: Optional[Callable] = None):
     await self.emit_data('general', data, callback)
 
-  async def emit_greenhouse(self, data: Dict[str, Any], callback: Optional[Callable] = None):
-    await self.emit_data('greenhouse', data, callback)
-
-  async def emit_irrigationfertilization(self, data: Dict[str, Any], callback: Optional[Callable] = None):
-    await self.emit_data('irrigationfertilization', data, callback)
-
-  async def emit_plantprotection(self, data: Dict[str, Any], callback: Optional[Callable] = None):
-    await self.emit_data('plantprotection', data, callback)
-
-  async def emit_viticulture(self, data: Dict[str, Any], callback: Optional[Callable] = None):
-    await self.emit_data('viticulture', data, callback)
+  async def emit_myfarm(self, data: Dict[str, Any], farm_id: str, callback: Optional[Callable] = None):
+    await self.emit_data(f'myfarm-{farm_id}', data, callback)

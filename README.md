@@ -1,4 +1,4 @@
-# Deltaton Feeding Library for Python
+# Deltaton Python Client
 This is a Python client for the Deltaton Feed API. It allows you to connect to the Deltaton websocket and emit data to the Deltaton platform.
 
 ## Authentication
@@ -21,10 +21,5 @@ See the [example.py](https://github.com/deltaton-labs/deltaton_feed_py/blob/main
 The client has the following methods:
 - `connect()`
 - `disconnect()`
-- `emit_bee(data: Dict[str, Any], callback: Optional[Callable] = None)`
-- `emit_fruitgrowing(data: Dict[str, Any], callback: Optional[Callable] = None)`
 - `emit_general(data: Dict[str, Any], callback: Optional[Callable] = None)`
-- `emit_greenhouse(data: Dict[str, Any], callback: Optional[Callable] = None)`
-- `emit_irrigationfertilization(data: Dict[str, Any], callback: Optional[Callable] = None)`
-- `emit_plantprotection(data: Dict[str, Any], callback: Optional[Callable] = None)`
-- `emit_viticulture(data: Dict[str, Any], callback: Optional[Callable] = None)`
+- `emit_myfarm(data: Dict[str, Any], farm_id: str, callback: Optional[Callable] = None)`

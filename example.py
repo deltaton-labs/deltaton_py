@@ -1,4 +1,4 @@
-from deltaton_feed_py.index import DeltatonFeedClient
+from deltaton_py.index import DeltatonFeedClient
 import asyncio
 import math
 import random
@@ -11,6 +11,7 @@ async def handle_response(data):
 async def main():
   token = 'YOUR_DELTATON_FEED_TOKEN'
   user_id = 'YOUR_DELTATON_USER_ID'
+  farm_id = 'YOUR_FARM_ID'
   deltaton_feed = DeltatonFeedClient(token, user_id)
   await deltaton_feed.connect()
 
@@ -20,7 +21,7 @@ async def main():
       'temperatureUnit': 'celsius',
       'humidity': math.floor(random.random() * 100),
     }
-    await deltaton_feed.emit_greenhouse(data, handle_response)
+    await deltaton_feed.emit_myfarm(data, farm_id, handle_response)
     await asyncio.sleep(60)
 
 if __name__ == '__main__':
